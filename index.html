@@ -1,20 +1,51 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cacao Andino</title>
     <link rel="stylesheet" href="/css/styles.css">
 </head>
+
 <body>
     <div id="header-container"></div>
     <main>
-        <section>
-            <h2></h2>
-            <p></p>
+        <section id="hero">
+            <h2>Postres artesanales de Ecuador y España en tu barrio</h2>
+            <p>Desde nuestra pastelería en el barrio de Salamanca, llevamos dulces caseros hasta tu puerta en Madrid.
+            </p>
+            <div>
+                <span>
+                    <img src="/img/icono-hornear.png">
+                    <a>Ver productos</a>
+                </span>
+                <span>
+                    <a>Pedir por Whatsapp</a>
+                    <img src="/img/icono-whatsapp.png">
+                </span>
+            </div>
+        </section>
+        <hr>
+        <section id="productos-estrella">
+            <h2>Productos estrella</h2>
+            <p>Desliza para ver los todos</p>
+            <div class="contenedor-carrusel">
+                <div id="direccion-carrusel-izquierda" class="direccion-carrusel">&lt;</div>
+                <div id="direccion-carrusel-derecha" class="direccion-carrusel">&gt;</div>
+                <div class="carrusel">
+                    <div class="item-carrusel">
+                        <img src="/img/quimbolito.webp">
+                    </div>
+                    <div class="item-carrusel">
+                        <img src="/img/tres-leches-ecuatoriana.webp">
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
     <div id="footer-container"></div>
     <script src="/js/main.js" defer></script><!-- defer: para que el js se carge despues del HTML -->
 </body>
+
 </html>

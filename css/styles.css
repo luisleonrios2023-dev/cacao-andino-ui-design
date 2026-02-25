@@ -3,6 +3,18 @@ body {
     padding: 0;
 }
 
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px 30px;
+}
+
+hr {
+    width: 90%;
+    margin: 20px auto;
+}
+
 header {
     background-color: #D7B899;
 }
@@ -19,7 +31,7 @@ header div:first-of-type {
     }
 }
 
-nav{
+nav {
     display: none;
 }
 
@@ -48,4 +60,97 @@ nav.menu-open {
     }
 
 
+}
+
+/* Sección hero */
+#hero {
+
+    h2 {
+        text-align: center;
+
+    }
+
+    p {
+        text-align: justify;
+    }
+
+    div {
+        width: 100%;
+        max-width: 727px;
+        display: flex;
+        justify-content: space-around;
+
+        span {
+            display: inline-flex;
+            align-items: center;
+            /* los alinea verticalmente */
+            gap: 8px;
+            /* espacio entre icono y texto */
+        }
+    }
+
+    img {
+        display: inline;
+        width: 25px;
+    }
+}
+
+/* Sección de productos estrella */
+#productos-estrella {
+    background-color: #4B2E2B;
+    color: #C6A75E;
+
+    .contenedor-carrusel {
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+
+        .direccion-carrusel {
+            background-color: rgba(0, 0, 0, 0.1);
+            height: min-content;
+            font-size: xx-large;
+        }
+
+        .carrusel {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            transition: transform 0.5 ease;
+            -webkit-overflow-scrolling: touch;
+            /* suaviza el swipe en iOS */
+            scrollbar-width: none;
+            /* Firefox */
+        }
+
+        .carrusel::-webkit-scrollbar {
+            display: none;
+            /* Chrome, Safari */
+        }
+
+        .item-carrusel {
+            flex-shrink: 0;
+            height: 300px;
+            width: 100%;
+            flex: 0 0 100%;
+            scroll-snap-align: center;
+        }
+
+        #direccion-carrusel-izquierda {
+            display: none;
+            position: absolute;
+            left: 0;
+
+        }
+
+        #direccion-carrusel-derecha {
+            display: none;
+            position: absolute;
+            right: 0;
+        }
+
+        img {
+            height: 300px;
+            width: 100%;
+        }
+    }
 }
