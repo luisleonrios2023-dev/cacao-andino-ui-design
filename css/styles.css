@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #D7B899;
+}
+
+header div:first-of-type {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 20px;
+
+    img {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+nav{
+    display: none;
+}
+
+nav.menu-open {
+    display: block;
+    position: absolute;
+    background-color: #D7B899;
+    width: 100%;
+
+    ul {
+        list-style: none;
+        padding: 0;
+
+    }
+
+    li {
+        width: 80%;
+        margin: 20px auto;
+        border-bottom: 2px solid #4B2E2B;
+        text-align: center;
+        padding: 10px;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+
+}
