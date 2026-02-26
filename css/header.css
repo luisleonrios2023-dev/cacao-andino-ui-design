@@ -1,0 +1,132 @@
+/* ===== Header mobile ===== */
+header {
+    background-color: #D7B899;
+    padding: 0px 30px;
+}
+
+header div:first-of-type {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    img {
+        width: 20px;
+        height: 40px;
+    }
+}
+
+nav {
+    display: none;
+    position: absolute;
+    left: 0;
+    background-color: #D7B899;
+    width: 100%;
+
+    ul {
+        list-style: none;
+        padding: 0;
+        width: 100%;
+    }
+
+    li {
+        text-align: center;
+    }
+
+    a {
+        display: block;
+        width: 50%;
+        margin: 20px auto;
+        padding: 30px;
+        border-bottom: 2px solid #4B2E2B;
+        text-decoration: none;
+        color: black;
+    }
+
+
+    a:hover {
+        background-color: #4B2E2B;
+        color: whitesmoke;
+    }
+
+    a:visited {
+        text-decoration: none;
+    }
+}
+
+nav.menu-open {
+    display: block;
+}
+
+
+/* ===== Header Tablet ===== */
+@media (min-width: 500px) {
+
+    #contenedor-icono-menu {
+        display: none;
+    }
+
+    header {
+        display: flex;
+        align-items: center;
+        /*centrar verticalmente*/
+        justify-content: space-between;
+        /*separa logo y nav*/
+    }
+
+    header div:first-of-type {
+        display: block;
+        align-items: unset;
+        text-align: left;
+    }
+
+    nav {
+        display: block;
+        position: unset;
+        width: fit-content;
+
+        ul {
+            margin: 0;
+            display: flex;
+            flex-direction: row;   
+            justify-content: end;
+            width: 100%;
+            height: 100%;
+
+
+        }
+
+        a {
+            display: block;
+            width: max-content;
+            margin: 0;
+            padding: 20px;
+            border-bottom: none;
+            text-decoration: none;
+            color: black;
+        }
+
+    }
+
+}
+
+/* ===== Header desktop ===== */
+@media (min-width: 1200px) {
+    header {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        div:first-of-type div:nth-child(2) {
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+
+        nav {
+            display: block;
+        }
+    }
+}
