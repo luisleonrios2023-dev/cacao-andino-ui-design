@@ -2,11 +2,21 @@ body {
     margin: 0;
     padding: 0;
 }
+
+main{
+    width: 100%;
+}
+
+@media (min-width: 1200px) {
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
 section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 40px 30px;
 }
 
 hr {

@@ -16,33 +16,70 @@
     <main>
         <section id="hero">
             <h2>Postres artesanales de Ecuador y España en tu barrio</h2>
-            <p>Desde nuestra pastelería en el barrio de Salamanca, llevamos dulces caseros hasta tu puerta en Madrid.
+            <p>
+                Desde nuestra pastelería en el barrio de Salamanca, llevamos dulces caseros hasta tu puerta en Madrid.
             </p>
-            <div>
-                <span>
-                    <img src="img/icono-hornear.png">
-                    <a>Ver productos</a>
+
+            <div class="hero-actions">
+                <span class="hero-btn primary">
+                    <img src="img/icono-hornear.png" alt="">
+                    <a href="#">Ver productos</a>
                 </span>
-                <span>
-                    <a>Pedir por Whatsapp</a>
-                    <img src="img/icono-whatsapp.png">
+
+                <span class="hero-btn secondary">
+                    <a href="#">Pedir por WhatsApp</a>
+                    <img src="img/icono-whatsapp.png" alt="">
                 </span>
             </div>
         </section>
         <hr>
         <section id="productos-estrella">
             <h2>Productos estrella</h2>
-            <p>Desliza para ver los todos</p>
+            <p class="subtitle">Nuestros 5 más pedidos</p>
+
             <div class="contenedor-carrusel">
-                <div id="direccion-carrusel-izquierda" class="direccion-carrusel">&lt;</div>
-                <div id="direccion-carrusel-derecha" class="direccion-carrusel">&gt;</div>
                 <div class="carrusel">
-                    <div class="item-carrusel">
-                        <img src="img/quimbolito.webp">
-                    </div>
-                    <div class="item-carrusel">
-                        <img src="img/tres-leches-ecuatoriana.webp">
-                    </div>
+
+                    <article class="item-carrusel">
+                        <img src="img/quimbolito.webp" alt="Quimbolito Tradicional">
+                        <div class="overlay">
+                            <h3>Quimbolito Tradicional</h3>
+                            <span class="precio">3,20 €</span>
+                        </div>
+                    </article>
+
+                    <article class="item-carrusel">
+                        <img src="img/tres-leches-ecuatoriana.webp" alt="Tres Leches Andino">
+                        <div class="overlay">
+                            <h3>Tres Leches Andino</h3>
+                            <span class="precio">4,80 €</span>
+                        </div>
+                    </article>
+
+                    <article class="item-carrusel">
+                        <img src="img/quimbolito.webp" alt="Torta de Chocolate con Cacao Arriba">
+                        <div class="overlay">
+                            <h3>Torta de Chocolate con Cacao Arriba</h3>
+                            <span class="precio">5,20 €</span>
+                        </div>
+                    </article>
+
+                    <article class="item-carrusel">
+                        <img src="img/quimbolito.webp" alt="Dulce de Higo con Queso">
+                        <div class="overlay">
+                            <h3>Dulce de Higo con Queso</h3>
+                            <span class="precio">4,50 €</span>
+                        </div>
+                    </article>
+
+                    <article class="item-carrusel">
+                        <img src="img/quimbolito.webp" alt="Empanada de Viento Dulce">
+                        <div class="overlay">
+                            <h3>Empanada de Viento Dulce</h3>
+                            <span class="precio">3,00 €</span>
+                        </div>
+                    </article>
+
                 </div>
             </div>
         </section>
