@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px 30px;
+}
+
+hr {
+    width: 90%;
+    margin: 20px auto;
+}

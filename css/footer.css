@@ -1,0 +1,13 @@
+footer {
+    background-color: black;
+    color: white;
+    padding: 30px 30px;
+    text-align: center;
+
+    #contenedor-iconos-redes-sociales {
+        img {
+            width: 100px;
+            height: 100px;
+        }
+    }
+}
