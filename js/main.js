@@ -1,10 +1,32 @@
-// Calcula ruta del partial según la carpeta
+// Función para calcular la ruta del partial según la página
 function getPartialPath(filename) {
   const isInPages = window.location.pathname.includes('/pages/');
   return isInPages ? `../partials/${filename}.html` : `partials/${filename}.html`;
 }
 
-// Carga partial en su contenedor
+// Función para ajustar rutas de imágenes y CSS dentro de un contenedor
+function fixPaths(container) {
+  const isInPages = window.location.pathname.includes('/pages/');
+  if (!isInPages) return;
+
+  // Ajustar imágenes
+  container.querySelectorAll('img').forEach(img => {
+    const src = img.getAttribute('src');
+    if (src && !src.startsWith('http') && !src.startsWith('../')) {
+      img.setAttribute('src', '../' + src);
+    }
+  });
+
+  // Ajustar hojas de estilo si las hubiera
+  container.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
+    const href = link.getAttribute('href');
+    if (href && !href.startsWith('http') && !href.startsWith('../')) {
+      link.setAttribute('href', '../' + href);
+    }
+  });
+}
+
+// Función para cargar un partial en un contenedor
 function loadPartial(containerId) {
   const container = document.getElementById(containerId);
   if (!container) return;
@@ -20,19 +42,23 @@ function loadPartial(containerId) {
     .then(html => {
       container.innerHTML = html;
 
-      // Inicializa menú solo si es el header
+      // Inicializar menú del header
       if (partialName === 'header') {
         const icono_menu = document.getElementById("icono-menu");
         const menu = document.getElementById("menu");
         if (icono_menu && menu) {
-          icono_menu.addEventListener('click', () => {
-            menu.classList.toggle('menu-open');
-          });
+          icono_menu.addEventListener('click', () => menu.classList.toggle('menu-open'));
         }
       }
+
+      // Ajustar rutas de imágenes y CSS
+      fixPaths(container);
     })
     .catch(err => console.error(err));
 }
 
-// Carga todos los partials automáticamente
-document.querySelectorAll('[data-partial]').forEach(el => loadPartial(el.id));
+// Cargar todos los partials automáticamente
+document.querySelectorAll('[data-partial]').forEach(el => {
+  if (!el.id) return;
+  loadPartial(el.id);
+});
