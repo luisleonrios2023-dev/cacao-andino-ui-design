@@ -13,13 +13,13 @@
 </head>
 
 <body>
-    <div id="header-container"></div>
+    <div id="header-container" data-partial="header"></div>
     <main>
         <section>
             <h2>Productos</h2>
         </section>
         <hr>
-        <section id="contenedor-productos">
+        <section id="contenedor-categoria-productos">
             <div class="card">
                 <div class="card-overlay"></div>
                 <div class="card-inner"><span>BOLLERIA</span></div>
@@ -38,9 +38,12 @@
                 <div class="card-inner"><span>PASTELES</span></div>
             </div>
         </section>
+        <section id="contenedor-articulo-producto">
+
+        </section>
     </main>
-    <div id="footer-container"></div>
-    <script src="/js/main.js" defer></script><!-- defer: para que el js se carge despues del HTML -->
+    <div id="footer-container" data-partial="footer"></div>
+    <script src="../js/main.js" defer></script><!-- defer: para que el js se carge despues del HTML -->
 </body>
 
 </html>

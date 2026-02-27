@@ -38,9 +38,3 @@
     background-size: cover;
     background-position: center;
 }
-
-.card-inner span {
-  background: rgba(0, 0, 0, 0.5);
-  padding: 8px 16px;
-  border-radius: 12px;
-}

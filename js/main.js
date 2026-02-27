@@ -1,39 +1,37 @@
-// Inyecta el header.html
-fetch("/partials/header.html")
-  .then(response => {
-    if (!response.ok) {
-      throw new Error("No se pudo cargar el header");
-    }
-    return response.text();
-  })
-  .then(html => {
-    document.getElementById("header-container").innerHTML = html;
+// Calcula ruta del partial según la carpeta
+function getPartialPath(filename) {
+  const isInPages = window.location.pathname.includes('/pages/');
+  return isInPages ? `../partials/${filename}.html` : `partials/${filename}.html`;
+}
 
-    //Aquí ya existe el html header
-    const icono_menu = document.getElementById("icono-menu");
-    const menu = document.getElementById("menu");
+// Carga partial en su contenedor
+function loadPartial(containerID) {
+  const container = document.getElementById(containerID);
+  if (!container) return;
 
-    icono_menu.addEventListener('click', () => {
-      menu.classList.toggle('menu-open');
+  const partialName = container.dataset.partial;
+  const path = getPartialPath(partialName);
+
+  fetch(path)
+    .then(res => {
+      if (!res.ok) throw new Error(`No se pudo cargar ${partialName}`);
     })
-  })
-  .catch(error => {
-    console.error("Error cargando el header:", error);
-  });
+    .then(html => {
+      container.innerHTML = html;
 
-// Injectar el footer
-fetch("/partials/footer.html")
-  .then(response => {
-    if (!response.ok) {
-      throw new Error("No se pudo cargar el header");
-    }
-    return response.text();
-  })
-  .then(html => {
-    document.getElementById("footer-container").innerHTML = html;
-  })
-  .catch(error => {
-    console.error("Error cargando el header:", error);
-  });
+      // Inicializa menú solo si es el header
+      if (partialName === 'header') {
+        const icono_menu = document.getElementById("icono-menu");
+        const menu = document.getElementById("menu");
+        if (icono_menu && menu) {
+          icono_menu.addEventListener('click', () => {
+            menu.classList.toggle('menu-open');
+          });
+        }
+      }
+    })
+    .catch(err => console.error(err))
+}
 
-
+// Carga todos los partial automaticamente
+document.querySelectorAll('[data-partial]').forEach(el => loadPartial(el.id));

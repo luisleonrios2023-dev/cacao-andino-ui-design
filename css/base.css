@@ -1,37 +1,22 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
 body {
-    margin: 0;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(3);
-    grid-template-areas:
-        "header header"
-        "content content"
-        "footer footer";
+  display: block;
 }
 
-#header-container {
-    width: 100%;
-    grid-area: header;
+main {
+  overflow: visible;
 }
 
-main{
-    width: 100%;
-    grid-area: content;
-}
+@media(min-width:600px) and (max-width: 900px){
 
 #footer-container{
-    width: 100%;
-    grid-area: footer;
+    height: 100%;
 }
-
-hr{
-    width: 80%;
-}
-
-@media (min-width: 1300px) {
-    main, #header-container, #footer-container {
-        max-width: 1300px;
-        margin: 0 auto;
-    }
 }
