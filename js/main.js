@@ -27,8 +27,8 @@ function fixImagePaths(container) {
 
 // Ajustamos rutas de enlaces
 function fixLinkPaths(container) {
-  container.querySelectorAll('a').forEach(img => {
-    const herf = img.getAttribute('href');
+  container.querySelectorAll('a').forEach(a => {
+    const herf = a.getAttribute('href');
     if (!herf) return;
 
     // Si no es URL absoluta
@@ -36,7 +36,7 @@ function fixLinkPaths(container) {
       if (isGitHubPages) {
         // Añadir repo al inicio solo en GitHub Pages
         const cleanHref = herf.replace(/^(\.\.\/)+/, ''); 
-        img.setAttribute('href', `/${REPO_NAME}/${cleanHref}`);
+        a.setAttribute('href', `/${REPO_NAME}/${cleanHref}`);
       } 
     }
   });
