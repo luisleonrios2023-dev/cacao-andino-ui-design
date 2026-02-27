@@ -1,23 +1,27 @@
-// Nombre del repositorio (para rutas absolutas en GitHub Pages)
-const REPO_NAME = "cacao-andino-ui-design";
+// Detectar entorno
+const isGitHubPages = window.location.hostname.includes('github.io');
+const REPO_NAME = "cacao-andino-ui-design"; // nombre exacto de tu repo
 
-// Devuelve la ruta correcta del partial según la carpeta de la página
+// Calcula la ruta del partial según la página
 function getPartialPath(filename) {
   const isInPages = window.location.pathname.includes('/pages/');
   return isInPages ? `../partials/${filename}.html` : `partials/${filename}.html`;
 }
 
-// Ajusta rutas de imágenes dentro de un contenedor para GitHub Pages
+// Ajusta rutas de imágenes dentro de un contenedor
 function fixImagePaths(container) {
   container.querySelectorAll('img').forEach(img => {
     const src = img.getAttribute('src');
     if (!src) return;
 
-    // Si la ruta no es absoluta (no empieza con http o /)
+    // Si no es URL absoluta
     if (!src.startsWith('http') && !src.startsWith('/')) {
-      // Eliminamos cualquier "../" inicial y añadimos la ruta del repo
-      const cleanSrc = src.replace(/^(\.\.\/)+/, '');
-      img.setAttribute('src', `/${REPO_NAME}/${cleanSrc}`);
+      if (isGitHubPages) {
+        // Añadir repo al inicio solo en GitHub Pages
+        const cleanSrc = src.replace(/^(\.\.\/)+/, ''); 
+        img.setAttribute('src', `/${REPO_NAME}/${cleanSrc}`);
+      } 
+      // Si quieres, aquí podrías añadir otras reglas para Live Server si fuese necesario
     }
   });
 }
@@ -35,7 +39,7 @@ function loadPartial(containerId) {
     .then(html => {
       container.innerHTML = html;
 
-      // Inicializa el menú si es header
+      // Inicializa menú si es header
       if (partialName === 'header') {
         const icono_menu = document.getElementById("icono-menu");
         const menu = document.getElementById("menu");
@@ -44,13 +48,13 @@ function loadPartial(containerId) {
         }
       }
 
-      // Arregla rutas de imágenes para GitHub Pages
+      // Ajustar rutas de imágenes en header, footer o cualquier partial
       fixImagePaths(container);
     })
     .catch(err => console.error(err));
 }
 
-// Detecta todos los contenedores con data-partial y los carga
+// Cargar todos los partials automáticamente
 document.querySelectorAll('[data-partial]').forEach(el => {
   if (!el.id) return;
   loadPartial(el.id);
