@@ -1,5 +1,5 @@
 // Inyecta el header.html
-fetch("partials/header.html")
+fetch("/partials/header.html")
   .then(response => {
     if (!response.ok) {
       throw new Error("No se pudo cargar el header");
@@ -22,7 +22,7 @@ fetch("partials/header.html")
   });
 
 // Injectar el footer
-fetch("partials/footer.html")
+fetch("/partials/footer.html")
   .then(response => {
     if (!response.ok) {
       throw new Error("No se pudo cargar el header");

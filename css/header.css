@@ -3,7 +3,7 @@
   background: linear-gradient(180deg, #D7B899, #cfae8f);
   padding: 12px 20px;
   position: relative;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 .header-top {
@@ -34,6 +34,9 @@
   width: 100%;
   padding: 20px 0;
   animation: slideDown 0.2s ease;
+  z-index: 9999;
+  /* mucho más alto que cualquier card */
+
 }
 
 .menu ul {
@@ -73,6 +76,7 @@
     opacity: 0;
     transform: translateY(-6px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -118,11 +122,6 @@
 
 /* ===== Header Desktop ===== */
 @media (min-width: 1200px) {
-  .header {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
   .logo h1 {
     font-size: 1.8rem;
   }
