@@ -5,8 +5,8 @@ function getPartialPath(filename) {
 }
 
 // Carga partial en su contenedor
-function loadPartial(containerID) {
-  const container = document.getElementById(containerID);
+function loadPartial(containerId) {
+  const container = document.getElementById(containerId);
   if (!container) return;
 
   const partialName = container.dataset.partial;
@@ -15,6 +15,7 @@ function loadPartial(containerID) {
   fetch(path)
     .then(res => {
       if (!res.ok) throw new Error(`No se pudo cargar ${partialName}`);
+      return res.text();
     })
     .then(html => {
       container.innerHTML = html;
@@ -30,8 +31,8 @@ function loadPartial(containerID) {
         }
       }
     })
-    .catch(err => console.error(err))
+    .catch(err => console.error(err));
 }
 
-// Carga todos los partial automaticamente
+// Carga todos los partials automáticamente
 document.querySelectorAll('[data-partial]').forEach(el => loadPartial(el.id));

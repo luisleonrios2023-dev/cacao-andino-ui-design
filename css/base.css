@@ -13,10 +13,3 @@ body {
 main {
   overflow: visible;
 }
-
-@media(min-width:600px) and (max-width: 900px){
-
-#footer-container{
-    height: 100%;
-}
-}
