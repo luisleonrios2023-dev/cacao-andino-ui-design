@@ -21,7 +21,23 @@ function fixImagePaths(container) {
         const cleanSrc = src.replace(/^(\.\.\/)+/, ''); 
         img.setAttribute('src', `/${REPO_NAME}/${cleanSrc}`);
       } 
-      // Si quieres, aquí podrías añadir otras reglas para Live Server si fuese necesario
+    }
+  });
+}
+
+// Ajustamos rutas de enlaces
+function fixLinkPaths(container) {
+  container.querySelectorAll('a').forEach(img => {
+    const herf = img.getAttribute('href');
+    if (!herf) return;
+
+    // Si no es URL absoluta
+    if (!herf.startsWith('http') && !herf.startsWith('/')) {
+      if (isGitHubPages) {
+        // Añadir repo al inicio solo en GitHub Pages
+        const cleanHref = herf.replace(/^(\.\.\/)+/, ''); 
+        img.setAttribute('href', `/${REPO_NAME}/${cleanHref}`);
+      } 
     }
   });
 }
@@ -50,6 +66,8 @@ function loadPartial(containerId) {
 
       // Ajustar rutas de imágenes en header, footer o cualquier partial
       fixImagePaths(container);
+      // Ajustar rutas de enlaces en cualquier partial
+      fixLinkPaths(container);
     })
     .catch(err => console.error(err));
 }
