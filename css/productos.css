@@ -12,22 +12,6 @@ section {
     gap: 50px;
 }
 
-#contenedor-categoria-productos > .card:nth-child(1) > .card-inner {
-  background-image: url("../img/bolleria.png");
-
-}
-
-#contenedor-categoria-productos > .card:nth-child(2) > .card-inner {
-  background-image: url("../img/quimbolito.webp");
-}
-
-#contenedor-categoria-productos > .card:nth-child(3) > .card-inner {
-    background-image: url("../img/tarta-queso.jpg");
-}
-
-#contenedor-categoria-productos > .card:nth-child(4) > .card-inner {
-    background-image: url("../img/pastel-vainilla-frutos-rojos.webp");
-}
 /* Tablet */
 @media(min-width:500px){
     #contenedor-categoria-productos{
