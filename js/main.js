@@ -28,16 +28,20 @@ function fixImagePaths(container) {
 // Ajustamos rutas de enlaces
 function fixLinkPaths(container) {
   container.querySelectorAll('a').forEach(a => {
-    const herf = a.getAttribute('href');
-    if (!herf) return;
+    const href = a.getAttribute('href');
+    if (!href) return;
 
-    // Si no es URL absoluta
-    if (!herf.startsWith('http') && !herf.startsWith('/')) {
-      if (isGitHubPages) {
-        // Añadir repo al inicio solo en GitHub Pages
-        const cleanHref = herf.replace(/^(\.\.\/)+/, ''); 
-        a.setAttribute('href', `/${REPO_NAME}/${cleanHref}`);
-      } 
+    // Ignorar URLs absolutas reales (https://, mailto:, tel:, etc.)
+    if (
+      href.startsWith('http') ||
+      href.startsWith('mailto:') ||
+      href.startsWith('tel:') ||
+      href.startsWith('#')
+    ) return;
+
+    if (isGitHubPages) {
+      const cleanHref = href.replace(/^(\.\.\/)+/, '');
+      a.setAttribute('href', `/${REPO_NAME}/${cleanHref}`);
     }
   });
 }
