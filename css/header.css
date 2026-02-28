@@ -34,9 +34,7 @@
   width: 100%;
   padding: 20px 0;
   animation: slideDown 0.2s ease;
-  z-index: 9999;
-  /* mucho más alto que cualquier card */
-
+  z-index: 9999; /* Para que el menu oculte cualquier cosa que tenga debajo*/
 }
 
 .menu ul {
