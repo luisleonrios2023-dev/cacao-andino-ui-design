@@ -25,24 +25,43 @@ function fixImagePaths(container) {
   });
 }
 
-// Ajustamos rutas de enlaces
+// Ajustamos rutas de enlaces (header, footer, partials)
 function fixLinkPaths(container) {
-  container.querySelectorAll('a').forEach(a => {
-    const href = a.getAttribute('href');
+  const links = container.querySelectorAll("a[href]");
+
+  const path = window.location.pathname;
+  const isInPages = path.includes("/pages/");
+  const isGitHubPages = window.location.hostname.includes("github.io");
+
+  links.forEach(a => {
+    let href = a.getAttribute("href");
     if (!href) return;
 
-    // Ignorar URLs absolutas reales (https://, mailto:, tel:, etc.)
+    // Ignorar URLs que no debemos tocar
     if (
-      href.startsWith('http') ||
-      href.startsWith('mailto:') ||
-      href.startsWith('tel:') ||
-      href.startsWith('#')
+      href.startsWith("http") ||
+      href.startsWith("mailto:") ||
+      href.startsWith("tel:") ||
+      href.startsWith("#")
     ) return;
 
+    // Limpiamos ../ para normalizar
+    href = href.replace(/^(\.\.\/)+/, "");
+
+    // Si estamos en GitHub Pages
     if (isGitHubPages) {
-      const cleanHref = href.replace(/^(\.\.\/)+/, '');
-      a.setAttribute('href', `/${REPO_NAME}/${cleanHref}`);
+      a.setAttribute("href", `/${REPO_NAME}/${href}`);
+      return;
     }
+
+    // Si estamos en /pages/
+    if (isInPages) {
+      a.setAttribute("href", `../${href}`);
+      return;
+    }
+
+    // Si estamos en la raíz (index.html)
+    a.setAttribute("href", href);
   });
 }
 
@@ -69,7 +88,7 @@ function loadPartial(containerId) {
       }
 
       // Usamos la función de abajo del todo
-      if (partialName === 'footer'){
+      if (partialName === 'footer') {
         ocultarFooterEnContacto();
       }
 

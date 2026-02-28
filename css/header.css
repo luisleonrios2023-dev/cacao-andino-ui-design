@@ -18,7 +18,12 @@
   cursor: pointer;
 }
 
-.logo h1 {
+.logo a{
+  text-decoration: none;
+  color: black;
+}
+
+.logo a h1 {
   font-size: 1.4rem;
   letter-spacing: 1px;
   margin: 0;
