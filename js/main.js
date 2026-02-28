@@ -68,6 +68,11 @@ function loadPartial(containerId) {
         }
       }
 
+      // Usamos la función de abajo del todo
+      if (partialName === 'footer'){
+        ocultarFooterEnContacto();
+      }
+
       // Ajustar rutas de imágenes en header, footer o cualquier partial
       fixImagePaths(container);
       // Ajustar rutas de enlaces en cualquier partial
@@ -116,3 +121,16 @@ document.addEventListener("DOMContentLoaded", () => {
     contCategorias.style.display = "grid";
   });
 });
+
+// Función para ocultar info del footer en contacto.html
+function ocultarFooterEnContacto() {
+  if (!window.location.pathname.includes("contacto.html")) return;
+
+  const footerInfo = document.querySelector(".footer-info");
+  const footerSocial = document.querySelector(".footer-social");
+
+  if (!footerInfo || !footerSocial) return;
+
+  footerInfo.classList.add("hidden");
+  footerSocial.classList.add("hidden");
+}

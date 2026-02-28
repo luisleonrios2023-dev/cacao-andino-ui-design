@@ -23,7 +23,7 @@
 
 .footer-row {
   display: flex;
-  flex-direction: column;   /* 🔴 móvil y tablet: vertical */
+  flex-direction: column;   /* móvil y tablet: vertical */
   gap: 24px;
   align-items: center;
   text-align: center;
@@ -38,7 +38,7 @@
   gap: 16px;
   margin-top: 8px;
   justify-content: center;
-  flex-wrap: wrap;         /* 🔴 nunca se cortan los iconos */
+  flex-wrap: wrap;         /* nunca se cortan los iconos */
 }
 
 .footer-icons img {

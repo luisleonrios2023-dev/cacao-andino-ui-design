@@ -1,0 +1,115 @@
+/* Hero de contacto con textura sutil */
+.contacto-hero {
+    position: relative;
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #f9f5f0; /* base beige claro */
+    background-image: repeating-linear-gradient(
+        45deg,
+        rgba(0,0,0,0.02) 0,
+        rgba(0,0,0,0.02) 1px,
+        transparent 1px,
+        transparent 10px
+    );
+    border-radius: 12px;
+}
+
+.contacto-hero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(198,167,94,0.05); /* dorado muy suave */
+    border-radius: 12px;
+    z-index: 0;
+}
+
+.contacto-hero h1 {
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
+
+.contacto-hero p {
+    font-size: 1rem;
+}
+
+/* Sección de formulario + info */
+.contacto-formulario {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Formulario */
+#form-contacto {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#form-contacto label {
+    font-weight: bold;
+}
+
+#form-contacto input,
+#form-contacto textarea {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    width: 90%;
+}
+
+#form-contacto button {
+    padding: 10px 20px;
+    background-color: #C6A75E;
+    color: #4B2E2B;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+#form-contacto button:hover {
+    background-color: #b89a52;
+}
+
+/* Información adicional */
+.contacto-info {
+    background-color: rgba(0,0,0,0.05);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+}
+
+.contacto-info h2 {
+    margin-bottom: 8px;
+    color: #4B2E2B;
+}
+
+.contacto-info p {
+    margin-bottom: 16px;
+}
+
+.icono-redes {
+    width: 32px;
+    margin: 0 6px;
+}
+
+/* Responsive */
+@media(min-width: 768px) {
+    .contacto-formulario {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #form-contacto {
+        gap: 16px;
+    }
+}
+
+.hidden {
+  display: none !important;
+}

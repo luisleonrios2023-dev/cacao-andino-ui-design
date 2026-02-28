@@ -1,11 +1,53 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Contacto</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/contacto.css">
 </head>
+
 <body>
-    
+    <div id="header-container" data-partial="header"></div>
+    <main>
+        <section class="contacto-hero">
+            <h1>Contacto</h1>
+            <p>Estamos encantados de atenderte. Escríbenos y responderemos lo antes posible.</p>
+        </section>
+
+        <section class="contacto-formulario">
+            <form id="form-contacto">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="tu@email.com">
+
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" name="mensaje" rows="5" required
+                    placeholder="Escribe tu mensaje aquí..."></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+
+            <div class="contacto-info">
+                <h2>Nuestra ubicación</h2>
+                <p>Zona Fuente del Berro · Madrid</p>
+                <h2>Redes sociales</h2>
+                <p>
+                    <img src="../img/icono-instagram.png" alt="Instagram" class="icono-redes">
+                    <img src="../img/icono-facebook.png" alt="Facebook" class="icono-redes">
+                    <img src="../img/icono-youtube.png" alt="YouTube" class="icono-redes">
+                </p>
+            </div>
+        </section>
+    </main>
+    <div id="footer-container" data-partial="footer"></div>
+    <script src="../js/main.js" defer></script><!-- defer: para que el js se carge despues del HTML -->
 </body>
+
 </html>
