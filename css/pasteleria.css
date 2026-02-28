@@ -1,0 +1,58 @@
+/* Hero con imagen de fondo */
+.pasteleria-hero {
+    position: relative;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-overlay {
+    background-color: rgba(0,0,0,0.4); /* overlay semitransparente */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 12px;
+}
+
+.hero-overlay h1 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.hero-overlay p {
+    font-size: 1rem;
+}
+
+/* Sección valores */
+.pasteleria-valores {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+.valor-card {
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+/* Responsive */
+@media(min-width: 768px) {
+  .pasteleria-valores {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .pasteleria-destacados {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(min-width: 1024px) {
+  .pasteleria-valores {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

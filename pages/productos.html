@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../css/productos.css">
     <link rel="stylesheet" href="../css/cardbyLilaRest.css">
+    <link rel="stylesheet" href="../css/productos.css">
+
 </head>
 
 <body>
@@ -18,7 +19,7 @@
         <section>
             <h2>Productos</h2>
         </section>
-        <hr>
+        <!-- Categorias -->
         <section id="contenedor-categoria-productos">
             <div class="card" data-categoria="bolleria">
                 <div class="card-overlay"></div>
@@ -39,20 +40,165 @@
             <div class="card" data-categoria="pasteles">
                 <div class="card-overlay"></div>
                 <div class="card-inner" style="background-image: url('../img/pastel-vainilla-frutos-rojos.webp');">
-                    <span>PASTELES</span></div>
+                    <span>PASTELES</span>
+                </div>
             </div>
         </section>
+        <!-- Productos -->
         <section id="contenedor-articulo-producto" class="hidden">
             <button id="volver-categorias">← Volver a categorías</button>
 
-            <div class="producto bolleria">Croissant</div>
-            <div class="producto bolleria">Donut</div>
+            <!-- Pasteles -->
+            <div class="producto-card pasteles">
+                <img src="../img/cheesecake-de-chocolate.webp" alt="Pastel de chocolate clásico" class="producto-img">
+                <div class="producto-info">
+                    <h3>Pastel de chocolate clásico</h3>
+                    <p class="producto-desc">Bizcocho de cacao húmedo con relleno de crema de chocolate. Ideal para
+                        cumpleaños.</p>
+                    <div class="producto-footer">
+                        <span class="producto-precio">28 €</span>
+                        <button class="producto-btn">Ver producto</button>
+                    </div>
+                </div>
+            </div>
 
-            <div class="producto postres-ecuatorianos">Quimbolito</div>
+            <div class="producto-card pasteles">
+                <img src="../img/pastel-vainilla-frutos-rojos.webp" alt="Pastel de vainilla con frutos rojos"
+                    class="producto-img">
+                <div class="producto-info">
+                    <h3>Pastel de vainilla con frutos rojos</h3>
+                    <p class="producto-desc">Bizcocho suave de vainilla con crema ligera y fruta fresca. Siempre es una buena elección</p>
+                    <div class="producto-footer">
+                        <span class="producto-precio">30 €</span>
+                        <button class="producto-btn">Ver producto</button>
+                    </div>
+                </div>
+            </div>
 
-            <div class="producto postres-espanoles">Tarta de queso</div>
+            <div class="producto-card pasteles">
+                <img src="../img/tres-leches-ecuatoriana.webp" alt="Tres leches" class="producto-img">
+                <div class="producto-info">
+                    <h3>Tres leches</h3>
+                    <p class="producto-desc">Pastel esponjoso bañado en tres leches, jugoso y muy popular para
+                        celebraciones.</p>
+                    <div class="producto-footer">
+                        <span class="producto-precio">32 €</span>
+                        <button class="producto-btn">Ver producto</button>
+                    </div>
+                </div>
+            </div>
 
-            <div class="producto pasteles">Pastel de vainilla</div>
+            <!-- Postres ecuatorianos -->
+            <div class="producto-card  postres-ecuatorianos">
+                <img src="../img/pan-de-yuca.webp" alt="Pan de yuca" class="producto-img">
+                <div class="producto-info">
+                    <h3>Pan de yuca</h3>
+                    <p class="producto-desc">Panecillo de yuca y queso, crujiente por fuera y tierno por dentro.</p>
+                    <div class="producto-footer">
+                        <span class="producto-precio">2,50 € / unidad</span>
+                        <button class="producto-btn">Ver producto</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="producto-card  postres-ecuatorianos">
+                <img src="../img/quimbolito.webp" alt="Quimbolitos" class="producto-img">
+                <div class="producto-info">
+                    <h3>Quimbolitos</h3>
+                    <p class="producto-desc">Bizcochito al vapor envuelto en hoja de plátano, suave y aromático.</p>
+                    <div class="producto-footer">
+                        <span class="producto-precio">3,00 € / unidad</span>
+                        <button class="producto-btn">Ver producto</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="producto-card postres-ecuatorianos">
+                <img src="../img/pristinos.jpg" alt="Pristiños" class="producto-img">
+                <div class="producto-info">
+                    <h3>Pristiños</h3>
+                    <p class="producto-desc">Masa frita crujiente por fuera, servida con un toque dulce.</p>
+                    <div class="producto-footer">
+                        <span class="producto-precio">3,50 € / ración</span>
+                        <button class="producto-btn">Ver producto</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Postres españoles -->
+            <div class="producto-card postres-españoles">
+                <img src="../img/tarta-queso.jpg" alt="Tarta de queso" class="producto-img">
+                <div class="producto-info">
+                    <h3>Tarta de queso</h3>
+                    <p class="producto-desc">Cremosa por dentro, con base de galleta y sabor suave.</p>
+                    <div class="producto-footer">
+                        <span class="producto-precio">4,50 € / porción</span>
+                        <button class="producto-btn">Ver producto</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="producto-card postres-españoles">
+                <img src="../img/magdalenas.jpg" alt="Magdalenas" class="producto-img">
+                <div class="producto-info">
+                    <h3>Magdalenas</h3>
+                    <p class="producto-desc">Esponjosas y tiernas, perfectas para el café.</p>
+                    <div class="producto-footer">
+                        <span class="producto-precio">2,00 € / unidad</span>
+                        <button class="producto-btn">Ver producto</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="producto-card postres-españoles">
+                <img src="../img/palmeritas.webp" alt="Palmeritas" class="producto-img">
+                <div class="producto-info">
+                    <h3>Palmeritas</h3>
+                    <p class="producto-desc">Hojaldre crujiente con toque caramelizado.</p>
+                    <div class="producto-footer">
+                        <span class="producto-precio">1,80 € / unidad</span>
+                        <button class="producto-btn">Ver producto</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bollería -->
+            <div class="producto-card bolleria">
+                <img src="../img/croissants.jpg" alt="Croissant de mantequilla" class="producto-img">
+                <div class="producto-info">
+                    <h3>Croissant de mantequilla</h3>
+                    <p class="producto-desc">Hojaldre ligero y dorado, recién horneado.</p>
+                    <div class="producto-footer">
+                        <span class="producto-precio">1,90 €</span>
+                        <button class="producto-btn">Ver producto</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="producto-card bolleria">
+                <img src="../img/napolitana-chocolate.jpg" alt="Napolitana de chocolate" class="producto-img">
+                <div class="producto-info">
+                    <h3>Napolitana de chocolate</h3>
+                    <p class="producto-desc">Rellena de chocolate y horneada a diario.</p>
+                    <div class="producto-footer">
+                        <span class="producto-precio">2,20 €</span>
+                        <button class="producto-btn">Ver producto</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="producto-card bolleria">
+                <img src="../img/galleta-chips-chocolate.jpg" alt="Galleta con chips de chocolate"
+                    class="producto-img">
+                <div class="producto-info">
+                    <h3>Galleta con chips de chocolate</h3>
+                    <p class="producto-desc">Crujiente por fuera y tierna por dentro.</p>
+                    <div class="producto-footer">
+                        <span class="producto-precio">1,50 €</span>
+                        <button class="producto-btn">Ver producto</button>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
     <div id="footer-container" data-partial="footer"></div>

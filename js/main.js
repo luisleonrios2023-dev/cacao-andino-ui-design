@@ -18,9 +18,9 @@ function fixImagePaths(container) {
     if (!src.startsWith('http') && !src.startsWith('/')) {
       if (isGitHubPages) {
         // Añadir repo al inicio solo en GitHub Pages
-        const cleanSrc = src.replace(/^(\.\.\/)+/, ''); 
+        const cleanSrc = src.replace(/^(\.\.\/)+/, '');
         img.setAttribute('src', `/${REPO_NAME}/${cleanSrc}`);
-      } 
+      }
     }
   });
 }
@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const cards = document.querySelectorAll("#contenedor-categoria-productos .card");
   const contCategorias = document.getElementById("contenedor-categoria-productos");
   const contProductos = document.getElementById("contenedor-articulo-producto");
-  const productos = document.querySelectorAll("#contenedor-articulo-producto .producto");
+  const productos = document.querySelectorAll("#contenedor-articulo-producto .producto-card");
   const volverBtn = document.getElementById("volver-categorias");
 
   if (!cards.length || !contProductos) return;
@@ -97,13 +97,16 @@ document.addEventListener("DOMContentLoaded", () => {
     card.addEventListener("click", () => {
       const categoria = card.dataset.categoria;
 
+      // ocultar categorías
       contCategorias.style.display = "none";
-      contProductos.classList.remove("hidden");
 
+      // animar productos
+      contProductos.classList.add("hidden");  // inicia oculto
+      contProductos.classList.remove("hidden"); // dispara transición
+
+      // mostrar solo la categoría seleccionada
       productos.forEach(prod => {
-        prod.style.display = prod.classList.contains(categoria)
-          ? "block"
-          : "none";
+        prod.style.display = prod.classList.contains(categoria) ? "" : "none";
       });
     });
   });
