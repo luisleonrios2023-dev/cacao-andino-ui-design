@@ -1,3 +1,9 @@
+:root {
+  --color-primario: #3498db;
+  --espaciado-base: 16px;
+}
+
+
 @font-face {
   font-family: 'Playfair Display';
   src: url('./fonts/PlayfairDisplay-Regular.ttf') format('truetype');
