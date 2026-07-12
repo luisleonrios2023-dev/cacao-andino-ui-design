@@ -6,7 +6,7 @@ El proyecto presenta el catálogo de productos, la historia de la pastelería y 
 
 ## 🌐 Demo
 
-[Ver proyecto en GitHub Pages](AQUÍ_IRÁ_EL_ENLACE)
+[Ver proyecto en GitHub Pages](https://luisleonrios2023-dev.github.io/cacao-andino-ui-design/)
 
 ## 📸 Vista previa
 
