@@ -99,7 +99,7 @@
 .contenedor-carrusel {
   width: 100%;
   overflow: hidden;
-  /* 🔴 clave para que no rompa el flujo vertical */
+  /* clave para que no rompa el flujo vertical */
 }
 
 .carrusel {
