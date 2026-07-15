@@ -1,6 +1,6 @@
 /* ===== Header mobile ===== */
 .header {
-  background: linear-gradient(180deg, #D7B899, #cfae8f);
+  background: var(--color-primary);
   padding: 12px 20px;
   position: relative;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
@@ -16,17 +16,6 @@
   width: 26px;
   height: auto;
   cursor: pointer;
-}
-
-.logo a{
-  text-decoration: none;
-  color: black;
-}
-
-.logo a h1 {
-  font-size: 1.4rem;
-  letter-spacing: 1px;
-  margin: 0;
 }
 
 /* Menú mobile */
