@@ -5,6 +5,13 @@
   --color-background: #FFF9F2;
   --color-surface: #FFF;
   --color-text: #2F211B;
+
+  --color-text-light: #ffffff;
+
+  --border-radius-sm: 6px;
+  --border-radius-md: 12px;
+
+  --transition-base: 0.2s ease;
 }
 
 *,
@@ -96,4 +103,72 @@ img {
 
 main {
   flex: 1;
+}
+
+/* Botones */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border: 2px solid transparent;
+  border-radius: var(--border-radius-sm);
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color var(--transition-base),
+    color var(--transition-base),
+    border-color var(--transition-base),
+    transform var(--transition-base);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--color-accent) 45%, transparent);
+  outline-offset: 3px;
+}
+
+.btn-primary {
+  color: var(--color-text-light);
+  background-color: var(--color-primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-accent);
+}
+
+.btn-secondary {
+  color: var(--color-primary);
+  background-color: var(--color-secondary);
+  border-color: var(--color-primary);
+}
+
+.btn-secondary:hover {
+  color: var(--color-text-light);
+  background-color: var(--color-primary);
+}
+
+/* Enlaces */
+a {
+  color: var(--color-primary);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--color-accent);
+}
+
+/* Contenedor */
+.container {
+  width: min(100% - 2rem, 1200px);
+  margin-inline: auto;
 }
