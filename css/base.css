@@ -1,6 +1,10 @@
 :root {
-  --color-primario: #3498db;
-  --espaciado-base: 16px;
+  --color-primary: #5A321F;
+  --color-secundary: #F3E6D0;
+  --color-accent: #C9823A;
+  --color-background: #FFF9F2;
+  --color-surface: #FFF;
+  --color-text: #2F211B;
 }
 
 
