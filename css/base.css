@@ -156,14 +156,26 @@ main {
   background-color: var(--color-primary);
 }
 
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn:disabled,
+.btn[aria-disabled="true"] {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
 /* Enlaces */
-a {
+main a:not(.btn) {
   color: var(--color-primary);
   text-decoration-thickness: 2px;
   text-underline-offset: 3px;
+  transition: color var(--transition-base);
 }
 
-a:hover {
+main a:not(.btn):hover {
   color: var(--color-accent);
 }
 
