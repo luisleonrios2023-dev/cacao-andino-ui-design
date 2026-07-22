@@ -1,23 +1,56 @@
 <header class="header">
-    <div class="header-top">
-        <div id="contenedor-icono-menu" class="menu-toggle">
-            <img id="icono-menu" src="../img/icono-menu.png" alt="Abrir menú">
-        </div>
-
-        <div class="logo">
-            <img src="../img/logo_cacao_andino.png" alt="Cacao Andino" width="100px" height="100px">
-
-            <a href="index.html">
-            </a>
+    <div class="header-info" aria-label="Información de la pastelería">
+        <div class="header-info-inner">
+            <address>Calle del Cacao, 12 · Fuente del Berro, Madrid</address>
+            <p>Mar–Dom · 9:00–20:00</p>
+            <p>Lunes cerrado</p>
         </div>
     </div>
 
-    <nav id="menu" class="menu">
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="../pages/productos.html">Productos</a></li>
-            <li><a href="../pages/pasteleria.html">Pastelería</a></li>
-            <li><a href="../pages/contacto.html">Contacto</a></li>
-        </ul>
-    </nav>
+    <div class="header-main">
+        <button
+            id="menu-toggle"
+            class="menu-toggle"
+            type="button"
+            aria-controls="menu"
+            aria-expanded="false"
+            aria-label="Abrir menú de navegación"
+        >
+            <img src="../img/icono-menu.png" alt="" aria-hidden="true">
+        </button>
+
+        <div class="logo">
+            <a href="index.html" aria-label="Ir a la página de inicio de Cacao Andino">
+                <img src="../img/logo_cacao_andino.png" alt="Cacao Andino" class="logo-img">
+            </a>
+        </div>
+
+        <nav id="menu" class="menu" aria-label="Navegación principal">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="../pages/productos.html">Productos</a></li>
+                <li><a href="../pages/pasteleria.html">Pastelería</a></li>
+                <li><a href="../pages/contacto.html">Contacto</a></li>
+            </ul>
+
+            <div class="menu-details">
+                <address>Calle del Cacao, 12 · Fuente del Berro, Madrid</address>
+                <p>Mar–Dom · 9:00–20:00</p>
+                <p>Lunes cerrado</p>
+            </div>
+        </nav>
+
+        <!-- TODO: sustituir # y retirar el estado pendiente cuando exista un enlace real de WhatsApp. -->
+        <a
+            href="#"
+            class="btn btn-accent header-cta"
+            aria-label="Pedir por WhatsApp"
+            aria-disabled="true"
+            aria-describedby="whatsapp-pending-description"
+            data-whatsapp-pending
+        >
+            <span class="header-cta-short">Pedir</span>
+            <span class="header-cta-full">Pedir por WhatsApp</span>
+        </a>
+    </div>
 </header>
