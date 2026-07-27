@@ -1,33 +1,16 @@
-// Detectar entorno
-const isGitHubPages = window.location.hostname.includes('github.io');
-const REPO_NAME = "cacao-andino-ui-design"; // nombre exacto de tu repo
+const SITE_ROOT = new URL('../', document.currentScript.src);
 
-// Calcula la ruta del partial según la página
-function getPartialPath(filename) {
-  const isInPages = window.location.pathname.includes('/pages/');
-  return isInPages ? `../partials/${filename}.html` : `partials/${filename}.html`;
+function shouldPreserveUrl(url) {
+  return url.startsWith('#') || url.startsWith('//') || /^[a-z][a-z\d+.-]*:/i.test(url);
 }
 
 // Ajusta rutas de imágenes dentro de un contenedor
 function fixImagePaths(container) {
-  const isInPages = window.location.pathname.includes('/pages/');
-
   container.querySelectorAll('img').forEach(img => {
     const src = img.getAttribute('src');
-    if (!src) return;
+    if (!src || shouldPreserveUrl(src)) return;
 
-    // Si no es URL absoluta
-    if (!src.startsWith('http') && !src.startsWith('/')) {
-      const cleanSrc = src.replace(/^(\.\.\/)+/, '');
-
-      if (isGitHubPages) {
-        // Añadir repo al inicio solo en GitHub Pages
-        img.setAttribute('src', `/${REPO_NAME}/${cleanSrc}`);
-        return;
-      }
-
-      img.setAttribute('src', isInPages ? `../${cleanSrc}` : cleanSrc);
-    }
+    img.setAttribute('src', new URL(src, SITE_ROOT).href);
   });
 }
 
@@ -35,39 +18,11 @@ function fixImagePaths(container) {
 function fixLinkPaths(container) {
   const links = container.querySelectorAll("a[href]");
 
-  const path = window.location.pathname;
-  const isInPages = path.includes("/pages/");
-  const isGitHubPages = window.location.hostname.includes("github.io");
-
   links.forEach(a => {
-    let href = a.getAttribute("href");
-    if (!href) return;
+    const href = a.getAttribute("href");
+    if (!href || shouldPreserveUrl(href)) return;
 
-    // Ignorar URLs que no debemos tocar
-    if (
-      href.startsWith("http") ||
-      href.startsWith("mailto:") ||
-      href.startsWith("tel:") ||
-      href.startsWith("#")
-    ) return;
-
-    // Limpiamos ../ para normalizar
-    href = href.replace(/^(\.\.\/)+/, "");
-
-    // Si estamos en GitHub Pages
-    if (isGitHubPages) {
-      a.setAttribute("href", `/${REPO_NAME}/${href}`);
-      return;
-    }
-
-    // Si estamos en /pages/
-    if (isInPages) {
-      a.setAttribute("href", `../${href}`);
-      return;
-    }
-
-    // Si estamos en la raíz (index.html)
-    a.setAttribute("href", href);
+    a.setAttribute("href", new URL(href, SITE_ROOT).href);
   });
 }
 
@@ -157,7 +112,7 @@ function loadPartial(containerId) {
   if (!container) return;
 
   const partialName = container.dataset.partial;
-  const path = getPartialPath(partialName);
+  const path = new URL(`partials/${partialName}.html`, SITE_ROOT);
 
   fetch(path)
     .then(res => res.ok ? res.text() : Promise.reject(`No se pudo cargar ${partialName}`))
