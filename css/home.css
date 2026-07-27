@@ -26,48 +26,6 @@
   align-items: stretch;
 }
 
-.hero-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 14px 18px;
-  border-radius: 999px;
-  font-weight: 600;
-  text-decoration: none;
-  cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-
-.hero-btn img {
-  width: 20px;
-  height: 20px;
-}
-
-.hero-btn a {
-  color: inherit;
-  text-decoration: none;
-}
-
-/* Variantes */
-.hero-btn.primary {
-  background: #111;
-  color: #fff;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-}
-
-.hero-btn.secondary {
-  background: #25D366;
-  /* verde WhatsApp vibe */
-  color: #fff;
-  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
-}
-
-/* Feedback táctil */
-.hero-btn:active {
-  transform: scale(0.98);
-}
-
 /* Desktop */
 @media (min-width: 768px) {
   .hero-actions {
