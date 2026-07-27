@@ -3,7 +3,7 @@
     position: relative;
     text-align: center;
     padding: 60px 20px;
-    background-color: #f9f5f0; /* base beige claro */
+    background-color: var(--color-background); /* base beige claro */
     background-image: repeating-linear-gradient(
         45deg,
         rgba(0,0,0,0.02) 0,
@@ -18,7 +18,7 @@
     content: "";
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background-color: rgba(198,167,94,0.05); /* dorado muy suave */
+    background-color: color-mix(in srgb, var(--color-accent) 5%, transparent); /* dorado muy suave */
     border-radius: 12px;
     z-index: 0;
 }
@@ -57,15 +57,15 @@
 #form-contacto textarea {
     padding: 10px;
     border-radius: 8px;
-    border: 1px solid #ccc;
+    border: 1px solid color-mix(in srgb, var(--color-text) 55%, var(--color-surface));
     font-size: 1rem;
     width: 90%;
 }
 
 #form-contacto button {
     padding: 10px 20px;
-    background-color: #C6A75E;
-    color: #4B2E2B;
+    background-color: var(--color-accent);
+    color: var(--color-text);
     border: none;
     border-radius: 20px;
     cursor: pointer;
@@ -74,12 +74,20 @@
 }
 
 #form-contacto button:hover {
-    background-color: #b89a52;
+    color: var(--color-text-light);
+    background-color: var(--color-primary);
+}
+
+#form-contacto input:focus-visible,
+#form-contacto textarea:focus-visible,
+#form-contacto button:focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 3px;
 }
 
 /* Información adicional */
 .contacto-info {
-    background-color: rgba(0,0,0,0.05);
+    background-color: color-mix(in srgb, var(--color-text) 5%, transparent);
     border-radius: 12px;
     padding: 20px;
     text-align: center;
@@ -87,7 +95,7 @@
 
 .contacto-info h2 {
     margin-bottom: 8px;
-    color: #4B2E2B;
+    color: var(--color-primary);
 }
 
 .contacto-info p {

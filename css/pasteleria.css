@@ -10,8 +10,8 @@
 }
 
 .hero-overlay {
-    background-color: rgba(0,0,0,0.4); /* overlay semitransparente */
-    color: #fff;
+    background-color: color-mix(in srgb, var(--color-text) 75%, transparent); /* overlay semitransparente */
+    color: var(--color-text-light);
     padding: 20px;
     text-align: center;
     border-radius: 12px;
@@ -37,7 +37,7 @@
 .valor-card {
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 14px color-mix(in srgb, var(--color-text) 10%, transparent);
   text-align: center;
 }
 
