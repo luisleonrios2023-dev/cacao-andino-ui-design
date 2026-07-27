@@ -79,7 +79,7 @@ function setCurrentNavigationPage(container) {
     ? 'index.html'
     : lastPathPart;
 
-  container.querySelectorAll('.menu a[href]').forEach(link => {
+  container.querySelectorAll('.menu a[href], .footer-nav a[href]').forEach(link => {
     const linkPath = new URL(link.getAttribute('href'), window.location.href).pathname;
     const linkParts = linkPath.split('/').filter(Boolean);
     const linkPage = linkParts[linkParts.length - 1];
@@ -192,11 +192,6 @@ function loadPartial(containerId) {
         }
       }
 
-      // Usamos la función de abajo del todo
-      if (partialName === 'footer') {
-        ocultarFooterEnContacto();
-      }
-
       // Ajustar rutas de imágenes en header, footer o cualquier partial
       fixImagePaths(container);
       // Ajustar rutas de enlaces en cualquier partial
@@ -247,16 +242,3 @@ document.addEventListener("DOMContentLoaded", () => {
     contCategorias.style.display = "grid";
   });
 });
-
-// Función para ocultar info del footer en contacto.html
-function ocultarFooterEnContacto() {
-  if (!window.location.pathname.includes("contacto.html")) return;
-
-  const footerInfo = document.querySelector(".footer-info");
-  const footerSocial = document.querySelector(".footer-social");
-
-  if (!footerInfo || !footerSocial) return;
-
-  footerInfo.classList.add("hidden");
-  footerSocial.classList.add("hidden");
-}

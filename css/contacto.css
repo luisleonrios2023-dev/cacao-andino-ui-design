@@ -94,11 +94,6 @@
     margin-bottom: 16px;
 }
 
-.icono-redes {
-    width: 32px;
-    margin: 0 6px;
-}
-
 /* Responsive */
 @media(min-width: 768px) {
     .contacto-formulario {
@@ -108,8 +103,4 @@
     #form-contacto {
         gap: 16px;
     }
-}
-
-.hidden {
-  display: none !important;
 }
