@@ -49,13 +49,13 @@
  width: fit-content;
  align-items: center;
  justify-content: center;
- background-color: #eeeeee4b;
+ background-color: color-mix(in srgb, var(--color-secondary) 30%, transparent);
  border-radius: 5px;
  letter-spacing: 1px;
  transition: all 0.2s linear;
  cursor: pointer;
- border: 2px solid black;
- background: #fff;
+ border: 2px solid var(--color-text);
+ background: var(--color-surface);
  margin: 0 auto;
 }
 
@@ -72,7 +72,9 @@
 }
 
 #volver-categorias:hover {
- box-shadow: 9px 9px 33px #d1d1d1, -9px -9px 33px #ffffff;
+ box-shadow:
+    9px 9px 33px color-mix(in srgb, var(--color-text) 18%, transparent),
+    -9px -9px 33px var(--color-surface);
  transform: translateY(-2px);
 }
 
@@ -101,18 +103,18 @@
     flex-wrap: nowrap;
     /* Mobile: vertical */
     gap: 12px;
-    background-color: #fff;
+    background-color: var(--color-surface);
     border-radius: 14px;
     padding: 14px;
     margin: 20px auto;
     max-width: 100%;
-    box-shadow: 0 6px 16px rgba(75, 46, 43, 0.12);
+    box-shadow: 0 6px 16px color-mix(in srgb, var(--color-primary) 12%, transparent);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .producto-card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 22px rgba(75, 46, 43, 0.18);
+    box-shadow: 0 10px 22px color-mix(in srgb, var(--color-primary) 18%, transparent);
 }
 
 .producto-img {
@@ -121,20 +123,19 @@
     /* Mobile: imagen protagonista */
     object-fit: cover;
     border-radius: 10px;
-    border: 2px solid #D7B899;
-    /* Beige cálido */
+    border: 2px solid var(--color-accent);
 }
 
 .producto-info h3 {
     margin: 4px 0 6px;
-    color: #4B2E2B;
+    color: var(--color-primary);
     /* Marrón chocolate */
     font-size: 1.1rem;
 }
 
 .producto-desc {
     font-size: 0.95rem;
-    color: #555;
+    color: var(--color-text);
     line-height: 1.4;
 }
 
@@ -147,15 +148,13 @@
 
 .producto-precio {
     font-weight: bold;
-    color: #6B8E23;
-    /* Verde hoja */
+    color: var(--color-primary);
     font-size: 1.05rem;
 }
 
 .producto-btn {
-    background-color: #C6A75E;
-    /* Dorado suave */
-    color: #4B2E2B;
+    background-color: var(--color-accent);
+    color: var(--color-text);
     border: none;
     border-radius: 20px;
     padding: 8px 16px;
@@ -166,8 +165,15 @@
 }
 
 .producto-btn:hover {
-    background-color: #b89a52;
+    color: var(--color-text-light);
+    background-color: var(--color-primary);
     transform: translateY(-1px);
+}
+
+#volver-categorias:focus-visible,
+.producto-btn:focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 3px;
 }
 
 /* ===== Tablet y desktop ===== */

@@ -13,7 +13,7 @@
 #hero p {
   font-size: 1rem;
   line-height: 1.5;
-  color: rgba(0, 0, 0, 0.85);
+  color: color-mix(in srgb, var(--color-text) 85%, transparent);
   max-width: 520px;
   margin: 0 auto 24px;
 }
@@ -37,8 +37,8 @@
 
 /* ===== Productos estrella ===== */
 #productos-estrella {
-  background: #4B2E2B;
-  color: #F3D7A5;
+  background: var(--color-primary);
+  color: var(--color-secondary);
   padding: 48px 16px;
   text-align: center;
 }
@@ -80,8 +80,8 @@
   scroll-snap-align: center;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
-  background: #000;
+  box-shadow: 0 10px 25px color-mix(in srgb, var(--color-text) 35%, transparent);
+  background: var(--color-text);
 }
 
 .item-carrusel img {
