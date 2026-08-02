@@ -72,6 +72,88 @@
   }
 }
 
+/* ===== Valores ===== */
+.home-values {
+  padding-block: clamp(3rem, 7vw, 6rem);
+  background-color: var(--color-background);
+}
+
+.values-header {
+  max-width: 48rem;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.values-eyebrow {
+  margin: 0 0 0.75rem;
+  color: color-mix(in srgb, var(--color-accent) 60%, var(--color-primary));
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.values-header h2 {
+  margin: 0;
+  color: var(--color-primary);
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+.values-intro {
+  max-width: 42rem;
+  margin: 1rem auto 0;
+  color: color-mix(in srgb, var(--color-text) 82%, transparent);
+  text-wrap: balance;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+  margin-top: clamp(2rem, 5vw, 3.5rem);
+}
+
+.value-card {
+  min-width: 0;
+  padding: clamp(1.5rem, 4vw, 2rem);
+  border: 1px solid color-mix(in srgb, var(--color-text) 12%, transparent);
+  border-radius: var(--border-radius-md);
+  background-color: var(--color-surface);
+  box-shadow: 0 0.75rem 1.5rem color-mix(in srgb, var(--color-text) 8%, transparent);
+}
+
+.value-number {
+  display: block;
+  margin-bottom: 1.25rem;
+  color: color-mix(in srgb, var(--color-accent) 60%, var(--color-primary));
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  line-height: 1;
+}
+
+.value-card h3 {
+  margin: 0;
+  color: var(--color-primary);
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+.value-card p {
+  margin: 0.75rem 0 0;
+  color: color-mix(in srgb, var(--color-text) 84%, transparent);
+}
+
+@media (min-width: 768px) {
+  .values-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+}
+
 
 /* ===== Productos estrella ===== */
 #productos-estrella {
