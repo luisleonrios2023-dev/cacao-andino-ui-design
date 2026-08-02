@@ -15,25 +15,38 @@
     <div id="header-container" data-partial="header"></div>
     <main id="page-content">
         <section id="hero">
-            <h2>Postres artesanales de Ecuador y España en tu barrio</h2>
-            <p>
-                Desde nuestra pastelería en el barrio de Salamanca, llevamos dulces caseros hasta tu puerta en Madrid.
-            </p>
+            <div class="container hero-layout">
+                <div class="hero-content">
+                    <h1>Repostería artesanal de Ecuador y España en Madrid</h1>
+                    <p>Sabores tradicionales elaborados con mimo en Fuente del Berro.</p>
 
-            <div class="hero-actions">
-                <a href="pages/productos.html" class="btn btn-primary">
-                    Ver productos
-                </a>
-                <!-- TODO: sustituir # y retirar el estado pendiente cuando exista un enlace real de WhatsApp. -->
-                <a
-                    href="#"
-                    class="btn btn-secondary"
-                    aria-disabled="true"
-                    aria-describedby="whatsapp-pending-description"
-                    data-whatsapp-pending
-                >
-                    Pedir por WhatsApp
-                </a>
+                    <div class="hero-actions">
+                        <a href="pages/productos.html" class="btn btn-primary">
+                            Ver productos
+                        </a>
+                        <!-- TODO: sustituir # y retirar el estado pendiente cuando exista un enlace real de WhatsApp. -->
+                        <a
+                            href="#"
+                            class="btn btn-secondary"
+                            aria-disabled="true"
+                            aria-describedby="whatsapp-pending-description"
+                            data-whatsapp-pending
+                        >
+                            Pedir por WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-media">
+                    <img
+                        src="img/hero-cacao-andino.webp"
+                        alt="Selección de repostería artesanal con quimbolito, tarta de queso y pastel de chocolate"
+                        width="1448"
+                        height="1086"
+                        decoding="async"
+                        fetchpriority="high"
+                    >
+                </div>
             </div>
         </section>
         <section id="productos-estrella">
