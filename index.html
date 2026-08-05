@@ -86,54 +86,83 @@
                 </div>
             </div>
         </section>
-        <section id="productos-estrella">
-            <h2>Productos estrella</h2>
-            <p class="subtitle">Nuestros 5 más pedidos</p>
+        <section
+            id="productos-destacados"
+            class="featured-products"
+            aria-labelledby="productos-destacados-title"
+        >
+            <div class="container">
+                <header class="featured-products-header">
+                    <p class="featured-products-eyebrow">Favoritos de la casa</p>
+                    <h2 id="productos-destacados-title">Productos destacados</h2>
+                    <p class="featured-products-intro">
+                        Una selección de sabores que une la tradición de Ecuador y España con nuestra pasión por la
+                        repostería artesanal.
+                    </p>
+                </header>
 
-            <div class="contenedor-carrusel">
-                <div class="carrusel">
-
-                    <article class="item-carrusel">
-                        <img src="img/quimbolito.webp" alt="Quimbolito Tradicional">
-                        <div class="overlay">
-                            <h3>Quimbolito Tradicional</h3>
-                            <span class="precio">3,20 €</span>
+                <!-- TODO: sustituir los tres href por las fichas individuales cuando se creen esas páginas. -->
+                <div class="featured-products-grid">
+                    <article class="featured-product-card">
+                        <img
+                            class="featured-product-image"
+                            src="img/quimbolito-tradicional.webp"
+                            alt="Quimbolito tradicional abierto sobre su hoja de achira"
+                            width="1200"
+                            height="800"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                        <div class="featured-product-content">
+                            <h3>Quimbolito tradicional</h3>
+                            <p>Bizcochito al vapor envuelto en hoja de plátano, suave y aromático.</p>
+                            <p class="featured-product-price">3,00 € / unidad</p>
+                            <a href="pages/productos.html" class="btn btn-primary">Ver producto</a>
                         </div>
                     </article>
 
-                    <article class="item-carrusel">
-                        <img src="img/tres-leches-ecuatoriana.webp" alt="Tres Leches Andino">
-                        <div class="overlay">
-                            <h3>Tres Leches Andino</h3>
-                            <span class="precio">4,80 €</span>
+                    <article class="featured-product-card">
+                        <img
+                            class="featured-product-image"
+                            src="img/tarta-queso-artesana.webp"
+                            alt="Porción de tarta de queso artesana con superficie tostada"
+                            width="1200"
+                            height="800"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                        <div class="featured-product-content">
+                            <h3>Tarta de queso artesana</h3>
+                            <p>Cremosa por dentro, con base de galleta y un sabor suave.</p>
+                            <p class="featured-product-price">4,50 € / porción</p>
+                            <a href="pages/productos.html" class="btn btn-primary">Ver producto</a>
                         </div>
                     </article>
 
-                    <article class="item-carrusel">
-                        <img src="img/cheesecake-de-chocolate.webp" alt="Torta de Chocolate con Cacao Arriba">
-                        <div class="overlay">
-                            <h3>Torta de Chocolate con Cacao Arriba</h3>
-                            <span class="precio">5,20 €</span>
+                    <article class="featured-product-card">
+                        <img
+                            class="featured-product-image"
+                            src="img/pastel-chocolate-clasico.webp"
+                            alt="Porción de pastel de chocolate clásico con crema de chocolate"
+                            width="1200"
+                            height="800"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                        <div class="featured-product-content">
+                            <h3>Pastel de chocolate clásico</h3>
+                            <p>
+                                Bizcocho de cacao húmedo con relleno de crema de chocolate, ideal para celebraciones.
+                            </p>
+                            <p class="featured-product-price">28,00 €</p>
+                            <a href="pages/productos.html" class="btn btn-primary">Ver producto</a>
                         </div>
                     </article>
-
-                    <article class="item-carrusel">
-                        <img src="img/quimbolito.webp" alt="Dulce de Higo con Queso">
-                        <div class="overlay">
-                            <h3>Dulce de Higo con Queso</h3>
-                            <span class="precio">4,50 €</span>
-                        </div>
-                    </article>
-
-                    <article class="item-carrusel">
-                        <img src="img/quimbolito.webp" alt="Empanada de Viento Dulce">
-                        <div class="overlay">
-                            <h3>Empanada de Viento Dulce</h3>
-                            <span class="precio">3,00 €</span>
-                        </div>
-                    </article>
-
                 </div>
+
+                <footer class="featured-products-footer">
+                    <a href="pages/productos.html" class="btn btn-secondary">Ver todos los productos</a>
+                </footer>
             </div>
         </section>
     </main>
