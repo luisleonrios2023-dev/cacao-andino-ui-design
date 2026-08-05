@@ -155,110 +155,119 @@
 }
 
 
-/* ===== Productos estrella ===== */
-#productos-estrella {
-  background: var(--color-primary);
-  color: var(--color-secondary);
-  padding: 48px 16px;
+/* ===== Productos destacados ===== */
+.featured-products {
+  padding-block: clamp(3rem, 6vw, 5rem);
+  background-color: var(--color-secondary);
+}
+
+.featured-products-header {
+  max-width: 50rem;
+  margin-inline: auto;
   text-align: center;
 }
 
-#productos-estrella h2 {
-  font-size: 1.7rem;
-  margin-bottom: 6px;
+.featured-products-eyebrow {
+  margin: 0 0 0.75rem;
+  color: color-mix(in srgb, var(--color-accent) 50%, var(--color-primary));
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  line-height: 1.4;
+  text-transform: uppercase;
 }
 
-#productos-estrella .subtitle {
-  opacity: 0.85;
-  margin-bottom: 24px;
+.featured-products-header h2 {
+  margin: 0;
+  color: var(--color-primary);
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  line-height: 1.15;
+  text-wrap: balance;
 }
 
-/* ===== Mobile (igual que ahora) ===== */
-.contenedor-carrusel {
-  width: 100%;
+.featured-products-intro {
+  max-width: 46rem;
+  margin: 1rem auto 0;
+  color: var(--color-text);
+  text-wrap: balance;
+}
+
+.featured-products-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(1.25rem, 3vw, 1.75rem);
+  margin-top: clamp(2rem, 5vw, 3.5rem);
+}
+
+.featured-product-card {
+  min-width: 0;
   overflow: hidden;
-  /* clave para que no rompa el flujo vertical */
-}
-
-.carrusel {
   display: flex;
-  gap: 14px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  padding-bottom: 10px;
+  flex-direction: column;
+  border: 1px solid color-mix(in srgb, var(--color-text) 12%, transparent);
+  border-radius: var(--border-radius-md);
+  background-color: var(--color-surface);
+  box-shadow: 0 0.75rem 1.5rem color-mix(in srgb, var(--color-text) 10%, transparent);
+  transition:
+    box-shadow var(--transition-base),
+    transform var(--transition-base);
 }
 
-.carrusel::-webkit-scrollbar {
-  display: none;
-}
-
-.item-carrusel {
-  position: relative;
-  flex: 0 0 85%;
-  scroll-snap-align: center;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 10px 25px color-mix(in srgb, var(--color-text) 35%, transparent);
-  background: var(--color-text);
-}
-
-.item-carrusel img {
+.featured-product-image {
   width: 100%;
-  height: 260px;
+  height: auto;
+  aspect-ratio: 3 / 2;
   object-fit: cover;
-  display: block;
 }
 
+.featured-product-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1.25rem, 2.5vw, 1.75rem);
+}
 
-/* ===== Tablet (grid estable, adiós overflow raro) ===== */
-@media (min-width: 600px) and (max-width: 1024px) {
+.featured-product-content h3 {
+  margin: 0;
+  color: var(--color-primary);
+  font-size: clamp(1.35rem, 2.5vw, 1.65rem);
+  line-height: 1.2;
+}
 
-  .contenedor-carrusel {
-    overflow: visible;
-    /* en grid no necesitamos recorte horizontal */
-  }
+.featured-product-content > p:not(.featured-product-price) {
+  margin: 0.75rem 0 0;
+  color: var(--color-text);
+}
 
-  .carrusel {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    overflow: visible;
-    padding-bottom: 0;
-  }
+.featured-product-price {
+  margin: auto 0 1rem;
+  padding-top: 1.25rem;
+  color: var(--color-primary);
+  font-weight: 600;
+}
 
-  .item-carrusel {
-    flex: unset;
-  }
+.featured-product-content .btn {
+  width: 100%;
+}
 
-  .item-carrusel img {
-    height: 240px;
+.featured-products .btn:focus-visible {
+  outline-color: var(--color-primary);
+}
+
+.featured-products-footer {
+  margin-top: clamp(2rem, 4vw, 3rem);
+  text-align: center;
+}
+
+@media (hover: hover) {
+  .featured-product-card:hover {
+    box-shadow: 0 1rem 2rem color-mix(in srgb, var(--color-text) 14%, transparent);
+    transform: translateY(-0.25rem);
   }
 }
 
-
-/* ===== Desktop ===== */
-@media (min-width: 1025px) {
-  .carrusel {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    overflow: visible;
-  }
-
-  .item-carrusel img {
-    height: 300px;
-  }
-}
-
-/* Desktop grande */
-@media (min-width: 1200px) {
-  .carrusel {
-    grid-template-columns: repeat(5, 1fr);
-  }
-
-  .item-carrusel img {
-    height: 220px;
+@media (min-width: 768px) {
+  .featured-products-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
