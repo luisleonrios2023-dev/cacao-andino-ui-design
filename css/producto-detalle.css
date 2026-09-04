@@ -1,0 +1,121 @@
+.producto-detalle-container {
+    padding-block: clamp(1.25rem, 4vw, 3rem) clamp(3rem, 7vw, 6rem);
+}
+
+.migas {
+    margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+    font-size: 0.9rem;
+}
+
+.migas ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.migas li {
+    min-width: 0;
+}
+
+.migas li:not(:last-child)::after {
+    margin-left: 0.4rem;
+    content: "/";
+    color: color-mix(in srgb, var(--color-text) 55%, transparent);
+}
+
+.migas [aria-current="page"] {
+    font-weight: 600;
+}
+
+.migas a:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
+.producto-detalle {
+    min-width: 0;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    border: 1px solid color-mix(in srgb, var(--color-text) 12%, transparent);
+    border-radius: var(--border-radius-md);
+    background-color: var(--color-surface);
+    box-shadow: 0 0.75rem 1.5rem color-mix(in srgb, var(--color-text) 10%, transparent);
+}
+
+.producto-detalle-media,
+.producto-detalle-info {
+    min-width: 0;
+}
+
+.producto-detalle-media img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+}
+
+.producto-detalle-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: clamp(1.5rem, 5vw, 3rem);
+}
+
+.producto-detalle-etiqueta {
+    margin: 0 0 0.65rem;
+    color: color-mix(in srgb, var(--color-accent) 60%, var(--color-primary));
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.producto-detalle h1 {
+    margin: 0;
+    color: var(--color-primary);
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    line-height: 1.1;
+    text-wrap: balance;
+}
+
+.producto-detalle-descripcion {
+    margin: 1.25rem 0 0;
+    color: var(--color-text);
+    font-size: clamp(1rem, 2vw, 1.125rem);
+}
+
+.producto-detalle-precio {
+    margin: 1.5rem 0 0;
+    color: var(--color-primary);
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.producto-detalle-acciones {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1.75rem;
+}
+
+@media (min-width: 48rem) {
+    .producto-detalle {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    }
+
+    .producto-detalle-media img {
+        height: 100%;
+        min-height: 32rem;
+    }
+
+    .producto-detalle-acciones {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}

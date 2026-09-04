@@ -153,6 +153,9 @@
 }
 
 .producto-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     background-color: var(--color-accent);
     color: var(--color-text);
     border: none;
@@ -161,6 +164,8 @@
     cursor: pointer;
     font-weight: 600;
     font-size: 0.9rem;
+    line-height: 1;
+    text-decoration: none;
     transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
